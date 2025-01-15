@@ -18,7 +18,7 @@ export default function Form({addHandler}){
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => addHandler(text)}>
-                <Text style={styles.buttonText}>Добавить задачу...</Text>
+                <Text style={styles.buttonText}>Добавить задачу</Text>
             </TouchableOpacity>
 
         </View>
@@ -38,12 +38,11 @@ const styles = StyleSheet.create({
       },
       
     input:{
-        padding:"20px",
         textAlign:"center",
-        
         borderWidth: 0, 
         borderBottomWidth: 1,
         marginTop: 20,
+        marginBottom: 10,
         width: "60%",
         marginLeft: "20%",
     },

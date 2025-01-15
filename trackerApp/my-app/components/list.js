@@ -11,13 +11,14 @@ export default function ListItem ({el, deleteHandler}){
 
 const styles = StyleSheet.create({
     text:{
-        padding:"20px",
+        padding: 10,
         textAlign:"center",
         borderRadius:5,
-        backgroundColor: "#fafafa",
-        borderWidth: 1, 
+        backgroundColor: "#edc7b7",
+        // borderWidth: 1, 
         marginTop: 20,
         width: "60%",
+        height: 40,
         marginLeft: "20%",
     },
 })

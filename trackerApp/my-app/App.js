@@ -4,13 +4,14 @@ import Header from "./components/header"
 import React, {useState} from "react";
 import ListItem from './components/list';
 import Form from './components/form';
+// import {ImageBackground} from 'react-native';
 
 
 export default function App() {
   const [listOfItems, setListOfItems] = useState([
-    {text: "Купить....", key: "1"},
-    {text: "Помыть....", key: "2"},
-    {text: "Сделать....", key: "3"},
+    {text: "Купить", key: "1"},
+    {text: "Помыть", key: "2"},
+    {text: "Сделать", key: "3"},
   ])
 
   const addHandler = (text) => {
@@ -29,7 +30,7 @@ export default function App() {
 
   return (
     <View style={styles.header}>
-      
+      {/* <ImageBackground source="./assets/background.png" resizeMode="cover" style={styles.image}> */}
       <Header />
       <Form addHandler={addHandler}/>
       <FlatList
@@ -38,6 +39,7 @@ export default function App() {
         <ListItem el={item} deleteHandler={deleteHandler}/>
       )}
       />
+      {/* </ImageBackground> */}
     </View>
   );
 }
@@ -45,6 +47,8 @@ export default function App() {
 const styles = StyleSheet.create({
   header:{
     flex:1,
+    backgroundColor: '#eee2dc',
+    
   },
   container: {
     flex: 1,
@@ -52,4 +56,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+  }
 });

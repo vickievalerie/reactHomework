@@ -1,8 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text} from "react-native";
-import { useFonts } from "expo-font";
-import { Raleway_200ExtraLight } from "@expo-google-fonts/raleway";
-import { Montserrat_200ExtraLight } from "@expo-google-fonts/montserrat";
+
 
 
 
@@ -16,17 +14,19 @@ export default function Header(){
 
 const styles = StyleSheet.create({
     main:{
-        backgroundColor:"black",
+        backgroundColor:"#123c69",
         padding:"20px",
+        marginTop: 20,
 
     },
     text: {
-        fontFamily: "Montserrat_200ExtraLight",
         textAlign:"center",
-        fontSize: 25,
+        fontSize: 30,
         color:"white",
-        //fontWeight:"800",
         display: "flex",
-        marginLeft: "20%",
+        marginTop: 10,
+        marginBottom: 10,
+
+
     },
 })
