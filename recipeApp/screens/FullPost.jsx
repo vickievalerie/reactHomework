@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { View, Text } from 'react-native';
 import styled from 'styled-components/native';
 import { Loading } from '../components/Loading';
@@ -14,6 +13,13 @@ const PostImage = styled.Image`
 const PostText = styled.Text`
   font-size: 18px;
   line-height: 24px;
+`;
+
+const BoldPostText = styled.Text`
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+  margin-top: 10px;
 `;
 
 const recipes = require('../assets/recipes.json');
@@ -56,8 +62,13 @@ export const FullPostScreen = ({ route, navigation }) => {
   return (
     <View style={{ padding: 20 }}>
       <PostImage source={{ uri: data.imageUrl }} />
-      <PostText><b>Ингредиенты: </b>{listIngredients(data.ingredients)}<br /></PostText>
-      <PostText><br /><b>Рецепт: </b><br />{data.text}</PostText>
+      {/* <PostText><Text><b>Ингредиенты: </b></Text>{listIngredients(data.ingredients)}</PostText>
+      <PostText><Text><br /><br /><b>Рецепт: </b><br /></Text>{data.text}</PostText> */}
+      <BoldPostText>Ингредиенты: </BoldPostText>
+      <PostText>{listIngredients(data.ingredients)}</PostText>
+      <BoldPostText>Рецепт: </BoldPostText>
+      <PostText>{data.text}</PostText>
+
 
     </View>
   );
