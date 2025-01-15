@@ -11,8 +11,8 @@ export const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Новости' }} />
-        <Stack.Screen name="FullPost" component={FullPostScreen} options={{ title: 'Статья' }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Рецепты' }} />
+        <Stack.Screen name="FullPost" component={FullPostScreen} options={{ title: 'Рецепт' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

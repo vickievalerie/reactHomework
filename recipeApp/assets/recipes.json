@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Шоколадный торт",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Шоколадный%20торт.jpg",
       "ingredients": [
         "200 г муки",
         "200 г сахара",
@@ -27,7 +27,7 @@
     {
       "id": 2,
       "title": "Тирамису",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Тирамису.jpg",
       "ingredients": [
         "200 г савоярди",
         "250 г маскарпоне",
@@ -49,7 +49,7 @@
     {
       "id": 3,
       "title": "Панна котта",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Панна%20котта.jpg",
       "ingredients": [
         "500 мл сливок (33%)",
         "100 мл молока",
@@ -69,7 +69,7 @@
     {
       "id": 4,
       "title": "Чизкейк",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Чизкейк.jpg",
       "ingredients": [
         "200 г печенья",
         "100 г сливочного масла",
@@ -91,7 +91,7 @@
     {
       "id": 5,
       "title": "Брауни",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Брауни.jpg",
       "ingredients": [
         "200 г темного шоколада",
         "150 г сливочного масла",
@@ -113,7 +113,7 @@
     {
       "id": 6,
       "title": "Яблочный штрудель",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Яблочный%20штрудель.jpg",
       "ingredients": [
         "300 г слоеного теста",
         "4 яблока",
@@ -133,7 +133,7 @@
     {
       "id": 7,
       "title": "Эклеры",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Эклеры.jpg",
       "ingredients": [
         "150 г муки",
         "100 г сливочного масла",
@@ -155,7 +155,7 @@
     {
       "id": 8,
       "title": "Мусс из малины",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Мусс%20из%20малины.jpg",
       "ingredients": [
         "300 г малины",
         "100 г сахара",
@@ -173,7 +173,7 @@
     {
       "id": 9,
       "title": "Крем-брюле",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Крем-брюле.jpg",
       "ingredients": [
         "500 мл сливок",
         "5 яичных желтков",
@@ -193,7 +193,7 @@
     {
       "id": 10,
       "title": "Морковный пирог",
-      "imageUrl": "",
+      "imageUrl": "https://storage.yandexcloud.net/vickiepub/rec/Морковный%20пирог.jpg",
       "ingredients": [
         "200 г тертой моркови",
         "200 г муки",

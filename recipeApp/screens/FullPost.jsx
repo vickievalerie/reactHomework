@@ -16,8 +16,7 @@ const PostText = styled.Text`
   line-height: 24px;
 `;
 
-const recipes = require('./assets/recipes.json');
-
+const recipes = require('../assets/recipes.json');
 
 export const FullPostScreen = ({ route, navigation }) => {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -28,18 +27,16 @@ export const FullPostScreen = ({ route, navigation }) => {
     navigation.setOptions({
       title,
     });
-    axios
-      .get('https://5c3755177820ff0014d92711.mockapi.io/articles/' + id)
-      .then(({ data }) => {
-        setData(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        Alert.alert('Ошибка', 'Не удалось получить статью');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    var d = null;
+    recipes.recipes.forEach(element => {
+      if(element.id == id) {
+        d = element;
+      }
+    });
+    setData(d);
+    setIsLoading(false);
+
+  
   }, []);
 
   if (isLoading) {
@@ -50,10 +47,18 @@ export const FullPostScreen = ({ route, navigation }) => {
     );
   }
 
+  const listIngredients = (l) => {
+    
+    return l.join(", ");
+  };
+
+
   return (
     <View style={{ padding: 20 }}>
       <PostImage source={{ uri: data.imageUrl }} />
-      <PostText>{data.text}</PostText>
+      <PostText><b>Ингредиенты: </b>{listIngredients(data.ingredients)}<br /></PostText>
+      <PostText><br /><b>Рецепт: </b><br />{data.text}</PostText>
+
     </View>
   );
 };

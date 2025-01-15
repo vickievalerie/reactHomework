@@ -11,24 +11,17 @@ import {
 } from 'react-native';
 import { Post } from '../components/Post';
 
+const recipes = require('../assets/recipes.json');
+
+
 export const HomeScreen = ({ navigation }) => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState();
 
   const fetchPosts = () => {
     setIsLoading(true);
-    axios
-      .get('https://5c3755177820ff0014d92711.mockapi.io/articles')
-      .then(({ data }) => {
-        setItems(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        Alert.alert('Ошибка', 'Не удалось получить статьи');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    setItems(recipes.recipes);
+    setIsLoading(false);
   };
 
   React.useEffect(fetchPosts, []);
@@ -55,7 +48,7 @@ export const HomeScreen = ({ navigation }) => {
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => navigation.navigate('FullPost', { id: item.id, title: item.title })}>
-            <Post title={item.title} imageUrl={item.imageUrl} createdAt={item.createdAt} />
+            <Post title={item.title} imageUrl={item.imageUrl}/>
           </TouchableOpacity>
         )}
       />
