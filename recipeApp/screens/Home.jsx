@@ -12,35 +12,53 @@ import {
 } from 'react-native';
 import { Post } from '../components/Post';
 import Icon from "react-native-vector-icons/FontAwesome";
+import { Dropdown } from 'react-native-element-dropdown';
+
 
 
 const recipes = require('../assets/recipes.json');
-
+const allIngredients = recipes.recipes.flatMap(recipe => recipe.searchIngredients);
+const uniqueIngredients = [...new Set(allIngredients)].map(ingredient => ({
+  label: ingredient,
+  value: ingredient
+}));
 
 export const HomeScreen = ({ navigation }) => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState();
   const [search, setSearch] = React.useState(null);
+  const [value, setValue] = React.useState(null);
 
   const filterList = (item) => {
     const newList = recipes.recipes.filter((val) => val.searchIngredients.join(' ').toLocaleLowerCase().includes(item.toLocaleLowerCase()));
     setItems(newList);
   }
 
-  const fetchPosts = () => {
-    setIsLoading(true);
-    setItems(recipes.recipes);
-    setIsLoading(false);
-  };
+  // const fetchPosts = () => {
+  //   setIsLoading(true);
+  //   setItems(recipes.recipes);
+  //   setIsLoading(false);
+  // };
 
   React.useEffect(() => {
-    if(search !== null) {
-      filterList(search);
-    } 
-    else {
-      fetchPosts();
+    setIsLoading(true);
+    var data = recipes.recipes;
+    if(value !== null) {
+      data = data.filter((val) => val.searchIngredients.join(' ').toLocaleLowerCase().includes(value.label.toLocaleLowerCase()));
     }
-  }, [search]);
+    if(search !== null) {
+      data = data.filter((val) => val.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
+    }
+    setItems(data);
+    setIsLoading(false);
+
+    // if(search !== null) {
+    //   filterList(search);
+    // } 
+    // else {
+    //   fetchPosts();
+    // }
+  }, [search, value]);
 
   // React.useEffect(fetchPosts, []);
 
@@ -72,9 +90,31 @@ export const HomeScreen = ({ navigation }) => {
         />
       </View>
 
+      <Dropdown
+        style={styles.dropdown}
+        placeholderStyle={styles.placeholderStyle}
+        selectedTextStyle={styles.selectedTextStyle}
+        inputSearchStyle={styles.inputSearchStyle}
+        iconStyle={styles.iconStyle}
+        data={uniqueIngredients}
+        search
+        maxHeight={300}
+        labelField="label"
+        valueField="value"
+        placeholder="Ингредиент"
+        searchPlaceholder="Поиск..."
+        value={value}
+        onChange={item => {
+          setValue(item);
+        }}
+        renderLeftIcon={() => (
+          <Icon name="chevron-down" size={20} color='#FFFFFF' />
+        )}
+      />
+
       <FlatList
         style = {{ backgroundColor: '#F5EFE7'}}
-        refreshControl={<RefreshControl refreshing={isLoading} onRefresh={fetchPosts} />}
+        //refreshControl={<RefreshControl refreshing={isLoading} onRefresh={fetchPosts} />}
         data={items}
         renderItem={({ item }) => (
           <TouchableOpacity
@@ -115,5 +155,30 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3F0F0',
     padding: 15,
     borderRadius: 5,
+  },
+
+  dropdown: {
+    margin: 16,
+    height: 50,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.5,
+  },
+  iconDrop: {
+    marginRight: 5,
+  },
+  placeholderStyle: {
+    fontSize: 16,
+    // color: 'black',
+  },
+  selectedTextStyle: {
+    fontSize: 16,
+  },
+  iconStyle: {
+    width: 20,
+    height: 20,
+  },
+  inputSearchStyle: {
+    height: 40,
+    fontSize: 16,
   },
 })
