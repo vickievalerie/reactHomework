@@ -67,12 +67,13 @@ export const HomeScreen = ({ navigation }) => {
         </View>
         <TextInput
           style={styles.input}
-          placeholder="Search..."
+          placeholder="Поиск..."
           onChangeText={(val) => setSearch(val)}
         />
       </View>
 
       <FlatList
+        style = {{ backgroundColor: '#F5EFE7'}}
         refreshControl={<RefreshControl refreshing={isLoading} onRefresh={fetchPosts} />}
         data={items}
         renderItem={({ item }) => (
@@ -90,16 +91,18 @@ export const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   search: {
-    backgroundColor: '#EBE9E9',
+    backgroundColor: '#C4D9FF',
     margin: 10,
-    borderRadius: 5,
+    marginLeft: 15,
+    marginRight : 15,
+    borderRadius: 12,
     flexDirection: 'row',
   },
   icon: {
-    backgroundColor: '#004c4c',
+    backgroundColor: '#213555',
     padding: 15,
-    borderTopLeftRadius: 5,
-    borderBottomLeftRadius: 5,
+    borderTopLeftRadius: 12,
+    borderBottomLeftRadius: 12,
   },
   input: {
     flex: 1,
@@ -110,11 +113,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginVertical: 5,
     backgroundColor: '#F3F0F0',
-    padding: 10,
+    padding: 15,
     borderRadius: 5,
-  },
-  listText: {
-    fontWeight: 'bold',
-    fontSize: 18,
   },
 })

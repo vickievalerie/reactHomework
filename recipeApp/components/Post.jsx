@@ -4,7 +4,7 @@ const PostView = styled.View`
   flex-direction: row;
   padding: 15px;
   border-bottom-width: 1px;
-  border-bottom-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(33, 53, 85, 0.1);
   border-bottom-style: solid;
 `;
 
@@ -13,6 +13,7 @@ const PostImage = styled.Image`
   height: 60px;
   border-radius: 12px;
   margin-right: 12px;
+  border: 0.5px solid #3E5879;
 `;
 
 const PostTitle = styled.Text`
