@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 5,
         alignItems: 'center',
-        width: "60%",
-        marginLeft: "20%",
+        width: "80%",
+        marginLeft: "10%",
         marginTop: 10,
       },
       
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         marginTop: 20,
         marginBottom: 10,
-        width: "60%",
-        marginLeft: "20%",
+        width: "80%",
+        marginLeft: "10%",
     },
     inputFocused: {
         borderWidth: 1,

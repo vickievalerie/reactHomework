@@ -6,7 +6,7 @@ import { Loading } from '../components/Loading';
 const PostImage = styled.Image`
   border-radius: 10px;
   width: 100%;
-  height: 250px;
+  height: 400px;
   margin-bottom: 20px;
 `;
 
@@ -60,7 +60,7 @@ export const FullPostScreen = ({ route, navigation }) => {
 
 
   return (
-    <View style={{ padding: 20 }}>
+    <View style={{ padding: 20, backgroundColor:'#F5EFE7' }}>
       <PostImage source={{ uri: data.imageUrl }} />
       {/* <PostText><Text><b>Ингредиенты: </b></Text>{listIngredients(data.ingredients)}</PostText>
       <PostText><Text><br /><br /><b>Рецепт: </b><br /></Text>{data.text}</PostText> */}

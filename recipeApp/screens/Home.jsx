@@ -5,7 +5,7 @@ import {
   FlatList,
   View,
   ActivityIndicator,
-  RefreshControl,
+  // RefreshControl,
   TouchableOpacity,
   StyleSheet,
   TextInput,
@@ -77,7 +77,7 @@ export const HomeScreen = ({ navigation }) => {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
 
       <View style={styles.search}>
         <View style={styles.icon}>
@@ -107,8 +107,8 @@ export const HomeScreen = ({ navigation }) => {
         onChange={item => {
           setValue(item);
         }}
-        renderLeftIcon={() => (
-          <Icon name="chevron-down" size={20} color='#FFFFFF' />
+        renderRightIcon={() => (
+          <Icon name="chevron-down" size={18} color='#213555' />
         )}
       />
 
@@ -130,8 +130,11 @@ export const HomeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor:'#F5EFE7',
+  },
   search: {
-    backgroundColor: '#C4D9FF',
+    backgroundColor: '#D8C4B6',
     margin: 10,
     marginLeft: 15,
     marginRight : 15,
@@ -158,17 +161,18 @@ const styles = StyleSheet.create({
   },
 
   dropdown: {
-    margin: 16,
+    margin: 20,
+    marginTop: 0,
     height: 50,
-    borderBottomColor: 'gray',
+    borderBottomColor: '#3E5879',
     borderBottomWidth: 0.5,
+    
   },
   iconDrop: {
     marginRight: 5,
   },
   placeholderStyle: {
     fontSize: 16,
-    // color: 'black',
   },
   selectedTextStyle: {
     fontSize: 16,
